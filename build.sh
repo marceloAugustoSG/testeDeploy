@@ -1,4 +1,3 @@
-#!/bin/bash
 
 # Comando 1
 npm install
