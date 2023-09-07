@@ -1,5 +1,7 @@
-npx prisma generate
+#!/bin/bash
 
+# Comando 1
 npm install
 
-npm run build
+# Comando 2
+npx prisma generate
