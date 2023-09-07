@@ -1,12 +1,19 @@
 import Express from "express"
-
+import { prisma } from '../src/PrismaClient.js'
 const app = Express()
 
-app.get("/teste", (req, res) => {
 
-    return res.json({ "hello": "world" })
+
+app.get("/users", async (req, res) => {
+    const user = await prisma.user.findMany()
+    return res.status(200).json(user)
 
 })
-app.listen(3000, () => {
-    console.log('aoba')
+
+
+
+app.listen({
+    host: '0.0.0.0',
+    port: process.env.PORT
+
 })
