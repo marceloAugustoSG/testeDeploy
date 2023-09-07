@@ -3,15 +3,13 @@ import { prisma } from '../src/PrismaClient.js'
 
 const app = Express()
 
-app.get("/users", async (req, res) => {
+app.get("/users", async (res) => {
     const user = await prisma.user.findMany()
     return res.status(200).json(user)
 
 })
 app.listen(() => {
 
-    host: '0.0.0.0'
-
-        // console.log('rodando na porta 3000' + process.env.DATABASE_URL)
-
+    host: '0.0.0.0',
+    console.log("server is running port ")
 })
